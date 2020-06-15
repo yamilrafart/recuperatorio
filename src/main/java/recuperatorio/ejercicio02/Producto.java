@@ -1,6 +1,6 @@
 package recuperatorio.ejercicio02;
 
-public class Producto {
+public class Producto implements Comparable<Producto> {
 
 	private Integer id;
 	private String descripcion;
@@ -53,6 +53,19 @@ public class Producto {
 
 	public void setPrecio(Double precio) {
 		this.precio = precio;
+	}
+
+
+
+	public int compareTo(Producto o) {
+		if (this.precio < o.getPrecio()) {
+			return -1;
+		} else if (this.precio > o.getPrecio()) {
+			return 1;
+		} else if (this.precio == o.getPrecio()) {
+			return 0;
+		}
+		return 0;
 	}
 
 	
